@@ -1,0 +1,9 @@
+## Instructions for updating the remote interfaces/operations
+
+1. `npm install`
+2. `npm run generate-operation-metadata`
+3. Verify that the interfaces/operations (within the `gen` directory) meet expectations (check for new operations, interface properties, etc)
+4. `npm run compile`
+5. Verify that there are no compilation errors
+6. `npm run release` (accept all preconfigured defaults by pressing `enter` at each prompt, check the listed file modifications for inconsistencies)
+7. In the consuming project, change the `package.json` file to match the newly released version of `bonobo-remote`

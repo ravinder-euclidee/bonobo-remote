@@ -1,0 +1,27 @@
+{
+  "name": "bonobo-remote",
+  "version": "0.24.0",
+  "description": "Metadata and typescript interfaces for HTTP communication with the Booktrack web services.",
+  "private": true,
+  "main": "remote.js",
+  "scripts": {
+    "build": "npm run generate-operation-metadata && npm run compile",
+    "compile": "rm -rf account audio booktrack image marketplace stripe studio text wip operation-metadata.* remote.* && rm -rf .tmp/js && tsc && cp -r .tmp/js/src/ . && cp -r .tmp/js/gen/ .",
+    "generate-operation-metadata": "node generate-operation-metadata",
+    "release": "./node_modules/release-it/bin/release.js"
+  },
+  "author": "",
+  "license": "SEE LICENSE IN LICENSE",
+  "devDependencies": {
+    "handlebars": "^4.0.6",
+    "mkdirp": "^0.5.1",
+    "release-it": "^2.7.0",
+    "rimraf": "^2.6.1",
+    "scrape-url": "^3.0.0",
+    "typescript": "^2.2.1"
+  },
+  "dependencies": {
+    "rxjs": "^5.5.2"
+  },
+  "typings": "remote.d.ts"
+}
